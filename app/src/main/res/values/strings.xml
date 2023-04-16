@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SpaceChatApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="from_test_txt">supppppppppp</string>
+    <string name="date_test_text">14.04</string>
+    <string name="to_test_text">nothing much whu?</string>
+    <string name="input_hint">something...</string>
 </resources>

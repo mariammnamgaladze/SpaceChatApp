@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="mediumMyriadGeo_Normal">
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:fontFamily">@font/myriad_geo</item>
+    </style>
+
+    <style name="smallMyriadGeo_Normal">
+        <item name="android:textSize">@dimen/dimen_11sp</item>
+        <item name="android:color">@color/gray_400</item>
+        <item name="android:fontFamily">@font/myriad_geo</item>
+
+    </style>
+
+    <style name="Base.Widget.MaterialComponents.TextInputEditText.MessageTextInputEditText" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:maxLines">5</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_thumb</item>
+        <item name="android:scrollbarTrackVertical">@drawable/scrollbar_track</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:textColorHint">@color/gray_300</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:fontFamily">@font/myriad_geo</item>
+
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.MessageTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomStart">@dimen/dimen_28dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dimen_28dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dimen_28dp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dimen_28dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_1dp</item>
+        <item name="boxStrokeColor">@color/main_purple</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+
+</resources>

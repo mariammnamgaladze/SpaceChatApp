@@ -2,10 +2,9 @@ package com.example.spacechatapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.spacechatapp.R
 import com.example.spacechatapp.databinding.ActivityMainBinding
-import com.example.spacechatapp.presentation.first_screen.FirstFragment
-import com.example.spacechatapp.presentation.second_screen.SecondFragment
+import com.example.spacechatapp.presentation.top.TopFragment
+import com.example.spacechatapp.presentation.bottom.BottomFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -14,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportFragmentManager.beginTransaction()
-            .add(binding.firstFragment.id, FirstFragment())
-            .add(binding.secondFragment.id, SecondFragment())
+            .add(binding.topFragment.id, TopFragment())
+            .add(binding.bottomFragment.id, BottomFragment())
             .commit()
     }
 }

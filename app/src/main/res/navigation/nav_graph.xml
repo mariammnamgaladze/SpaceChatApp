@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/topFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.spacechatapp.presentation.first_screen.FirstFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        android:id="@+id/topFragment"
+        android:name="com.example.spacechatapp.presentation.top.TopFragment"
+        android:label="fragment_top"
+        tools:layout="@layout/fragment_top" />
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.spacechatapp.presentation.second_screen.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
+        android:id="@+id/bottomFragment"
+        android:name="com.example.spacechatapp.presentation.bottom.BottomFragment"
+        android:label="fragment_bottom"
+        tools:layout="@layout/fragment_bottom" />
 </navigation>

@@ -7,23 +7,46 @@
     android:orientation="vertical"
     tools:context=".presentation.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/firstFragment"
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/toDarkModeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:background="@drawable/day_to_night"
+            android:layout_gravity="end"
+            />
+
+        <ImageView
+            android:id="@+id/toLightModeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:background="@drawable/night_to_day"
+            android:layout_gravity="end"
+            android:visibility="gone"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/topFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0dp"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_top" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="6dp"
+        android:layout_height="@dimen/dimen_6dp"
         android:background="@color/yellow" />
 
     <FrameLayout
-
-        android:id="@+id/secondFragment"
+        android:id="@+id/bottomFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dimen_0dp"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_bottom" />
 </LinearLayout>

@@ -4,56 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/dimen_16dp"
+    android:layout_marginStart="@dimen/dimen_120dp"
     android:layout_marginTop="@dimen/dimen_20dp"
-    android:layout_marginEnd="@dimen/dimen_120dp">
+    android:layout_marginEnd="@dimen/dimen_16dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/smsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_1dp"
+        android:layout_marginEnd="@dimen/dimen_1dp"
         android:layout_marginBottom="@dimen/dimen_1dp"
         android:background="@drawable/sms_background"
-        android:backgroundTint="@color/gray_100"
+        android:backgroundTint="@color/purple_100"
         android:padding="@dimen/dimen_16dp"
-        android:textColor="@color/darkest_gray"
-        android:textSize="@dimen/sms_txt_size"
+        style="@style/mediumMyriadGeo_Normal"
         app:layout_constraintBottom_toBottomOf="@id/bigDotIV"
-        app:layout_constraintStart_toStartOf="@id/bigDotIV"
-        tools:text="@string/from_test_txt" />
+        app:layout_constraintEnd_toEndOf="@id/bigDotIV"
+        tools:text="nothing much wbu?" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/dotIv"
-        android:layout_width="10dp"
+        android:id="@+id/dotIV"
+        android:layout_width="@dimen/dimen_10dp"
         android:layout_height="@dimen/dimen_0dp"
         android:layout_marginBottom="@dimen/dimen_16dp"
         android:src="@drawable/dot"
-        android:tint="@color/gray_100"
+        android:tint="@color/purple_100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/bigDotIV"
         android:layout_width="@dimen/dimen_20dp"
         android:layout_height="@dimen/dimen_0dp"
         android:src="@drawable/dot"
-        android:tint="@color/gray_100"
-        app:layout_constraintBottom_toTopOf="@id/dotIv"
+        android:tint="@color/purple_100"
+        app:layout_constraintBottom_toTopOf="@id/dotIV"
         app:layout_constraintDimensionRatio="1"
-        app:layout_constraintStart_toEndOf="@id/dotIv" />
+        app:layout_constraintEnd_toStartOf="@id/dotIV" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20dp"
         android:layout_marginTop="@dimen/dimen_5dp"
-        android:textColor="@color/gray_400"
-        android:textSize="@dimen/date_txt_size"
-        app:layout_constraintStart_toStartOf="@id/smsTV"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        style="@style/smallMyriadGeo_Normal"
+        app:layout_constraintEnd_toEndOf="@id/smsTV"
         app:layout_constraintTop_toBottomOf="@id/smsTV"
-        tools:text="@string/date_test_text" />
+        tools:text="14.04" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

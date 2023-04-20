@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SpaceChatApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_hint">something...</string>
 </resources>

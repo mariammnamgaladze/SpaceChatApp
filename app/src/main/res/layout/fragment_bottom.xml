@@ -13,18 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_16dp"
         android:layout_marginBottom="@dimen/dimen_8dp"
-        app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/bottomFrSmsET"
-            style="@style/Base.Widget.MaterialComponents.TextInputEditText.MessageTextInputEditText"            android:layout_width="match_parent"
+            style="@style/Base.Widget.MaterialComponents.TextInputEditText.MessageTextInputEditText"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/input_hint"
-            android:paddingEnd="@dimen/dimen_30dp"
-            />
+            android:paddingEnd="@dimen/dimen_30dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_16dp"
-        android:background="@drawable/sent_btn"
+        android:background="@drawable/ic_send_btn"
         app:layout_constraintBottom_toBottomOf="@+id/bottomFrTxtBox"
         app:layout_constraintEnd_toEndOf="@+id/bottomFrTxtBox"
         app:layout_constraintTop_toTopOf="@+id/bottomFrTxtBox" />
@@ -48,6 +47,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/receive_sms_layout_item" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

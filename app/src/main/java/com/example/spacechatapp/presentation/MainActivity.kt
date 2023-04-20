@@ -12,9 +12,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportFragmentManager.beginTransaction()
-            .add(binding.topFragment.id, TopFragment())
-            .add(binding.bottomFragment.id, BottomFragment())
-            .commit()
+        setUpFragments()
+    }
+
+    private fun setUpFragments() {
+        supportFragmentManager.beginTransaction().apply {
+            add(binding.topFragment.id, TopFragment())
+            add(binding.bottomFragment.id, BottomFragment())
+            commit()
+        }
     }
 }

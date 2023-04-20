@@ -10,14 +10,14 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/smsTV"
+        style="@style/mediumMyriadGeo_Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_1dp"
         android:layout_marginBottom="@dimen/dimen_1dp"
-        android:background="@drawable/sms_background"
+        android:background="@drawable/bkg_sms"
         android:backgroundTint="@color/purple_100"
         android:padding="@dimen/dimen_16dp"
-        style="@style/mediumMyriadGeo_Normal"
         app:layout_constraintBottom_toBottomOf="@id/bigDotIV"
         app:layout_constraintEnd_toEndOf="@id/bigDotIV"
         tools:text="nothing much wbu?" />
@@ -45,11 +45,11 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateTV"
+        style="@style/smallMyriadGeo_Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_5dp"
         android:layout_marginEnd="@dimen/dimen_20dp"
-        style="@style/smallMyriadGeo_Normal"
         app:layout_constraintEnd_toEndOf="@id/smsTV"
         app:layout_constraintTop_toBottomOf="@id/smsTV"
         tools:text="14.04" />

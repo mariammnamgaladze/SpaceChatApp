@@ -12,21 +12,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/toDarkModeBtn"
+            android:id="@+id/modesBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/dimen_10dp"
-            android:background="@drawable/day_to_night" />
+            android:background="@drawable/ic_light_dark_modes" />
 
-        <ImageView
-            android:id="@+id/toLightModeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dimen_10dp"
-            android:background="@drawable/night_to_day"
-            android:visibility="gone" />
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout

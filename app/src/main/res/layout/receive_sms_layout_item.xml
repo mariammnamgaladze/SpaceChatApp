@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_1dp"
         android:layout_marginBottom="@dimen/dimen_1dp"
-        android:background="@drawable/sms_background"
+        android:background="@drawable/bkg_sms"
         android:backgroundTint="@color/gray_100"
         android:padding="@dimen/dimen_16dp"
         app:layout_constraintBottom_toBottomOf="@id/bigDotIV"
@@ -45,9 +45,9 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateTV"
+        style="@style/smallMyriadGeo_Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/smallMyriadGeo_Normal"
         android:layout_marginStart="@dimen/dimen_20dp"
         android:layout_marginTop="@dimen/dimen_5dp"
         app:layout_constraintStart_toStartOf="@id/smsTV"

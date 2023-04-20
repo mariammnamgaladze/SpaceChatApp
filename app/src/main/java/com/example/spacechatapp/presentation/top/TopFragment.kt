@@ -7,12 +7,12 @@ import com.example.spacechatapp.presentation.base.Inflate
 import com.example.spacechatapp.presentation.bottom.BottomFragmentViewModel
 
 
-class TopFragment : BaseFragment<FragmentTopBinding>() {
-    private val viewModel: TopFragmentViewModel by viewModels()
+class TopFragment : BaseFragment<FragmentTopBinding, TopFragmentViewModel>() {
+    override val viewModel by viewModels<TopFragmentViewModel>()
     override fun inflate(): Inflate<FragmentTopBinding> {
         return FragmentTopBinding::inflate
     }
 
-    override fun onBind() {
+    override fun onBind(viewModel: TopFragmentViewModel) {
     }
 }

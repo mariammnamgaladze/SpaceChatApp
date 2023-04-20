@@ -5,17 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
-abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     private var _binding: VB? = null
-    abstract fun inflate(): Inflate<VB>
     protected val binding get() = _binding!!
+    protected abstract val viewModel: VM
 
-    abstract fun onBind()
+    abstract fun onBind(viewModel: VM)
+    abstract fun inflate(): Inflate<VB>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +30,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onBind()
+        onBind(viewModel)
     }
 
     override fun onDestroyView() {

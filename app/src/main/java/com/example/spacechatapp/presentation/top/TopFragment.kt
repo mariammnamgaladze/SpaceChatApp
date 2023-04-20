@@ -4,7 +4,6 @@ import androidx.fragment.app.viewModels
 import com.example.spacechatapp.databinding.FragmentTopBinding
 import com.example.spacechatapp.presentation.base.BaseFragment
 import com.example.spacechatapp.presentation.base.Inflate
-import com.example.spacechatapp.presentation.bottom.BottomFragmentViewModel
 
 
 class TopFragment : BaseFragment<FragmentTopBinding, TopFragmentViewModel>() {

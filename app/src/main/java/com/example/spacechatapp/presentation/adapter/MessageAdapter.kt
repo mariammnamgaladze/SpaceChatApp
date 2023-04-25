@@ -1,27 +1,22 @@
 package com.example.spacechatapp.presentation.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spacechatapp.R
 import com.example.spacechatapp.common.extension.setBackgroundTint
 import com.example.spacechatapp.common.extension.setTint
-import com.example.spacechatapp.databinding.SmsLayoutItemBinding
+import com.example.spacechatapp.databinding.ChatMessageLayoutItemBinding
 import com.example.spacechatapp.presentation.model.MessageModel
 import com.example.spacechatapp.presentation.model.ChatUser
 
 class MessageAdapter(private val user: ChatUser) :
     ListAdapter<MessageModel, MessageAdapter.MessageViewHolder>(DiffCallback()) {
 
-    inner class MessageViewHolder(val binding: SmsLayoutItemBinding) :
-        RecyclerView.ViewHolder(binding.root)
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        val binding = SmsLayoutItemBinding.inflate(
+        val binding = ChatMessageLayoutItemBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -30,38 +25,40 @@ class MessageAdapter(private val user: ChatUser) :
     }
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        user.let { user ->
-            val message = getItem(position)
-            with(holder.binding) {
-                smsTV.text = message.message
-                dateTV.text = message.sentDate.toString()
-                val isSentByTopUser =
-                    if (user == ChatUser.TOP_USER) message.isSentByTopUser else !message.isSentByTopUser
-                val scale = if (isSentByTopUser) 1f else -1f
+        holder.bind(user, getItem(position))
+    }
+
+    class MessageViewHolder(private val binding: ChatMessageLayoutItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(user: ChatUser, message: MessageModel) {
+            with(binding) {
+                messageTextView.text = message.message
+                dateTextView.text = message.sentDate.toString()
+
+                val scale = if (user.name == message.user.name) SCALE_POSITIVE else SCALE_NEGATIVE
                 with(scale) {
                     root.scaleX = this
-                    smsTV.scaleX = this
-                    dateTV.scaleX = this
+                    messageTextView.scaleX = this
+                    dateTextView.scaleX = this
                 }
-
-                val color = if (isSentByTopUser) R.color.purple_100 else R.color.gray_100
-                with(ContextCompat.getColor(root.context, color)) {
-                    smallDotIV.setTint(this)
-                    BigDotIV.setTint(this)
-                    smsTV.setBackgroundTint(this)
+                val colorResId =
+                    if (user.name == message.user.name) COLOR_SEND else COLOR_RECEIVE
+                with(colorResId) {
+                    smallDotImageView.setTint(this)
+                    bigDotImageView.setTint(this)
+                    messageTextView.setBackgroundTint(this)
                 }
             }
         }
-    }
 
-    class DiffCallback<T : Any> : DiffUtil.ItemCallback<T>() {
-        override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
-            return oldItem.hashCode() == newItem.hashCode()
-        }
+        companion object {
+            const val COLOR_SEND = R.color.purple_100
+            const val COLOR_RECEIVE = R.color.gray_100
+            const val SCALE_POSITIVE = 1f
+            const val SCALE_NEGATIVE= -1f
 
-        @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
-            return oldItem == newItem
         }
     }
 }
+

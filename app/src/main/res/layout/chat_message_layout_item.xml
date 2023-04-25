@@ -9,7 +9,7 @@
     android:scaleX="1">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/smallDotIV"
+        android:id="@+id/smallDotImageView"
         android:layout_width="@dimen/dimen_10dp"
         android:layout_height="@dimen/dimen_0dp"
         android:src="@drawable/dot"
@@ -17,11 +17,11 @@
         android:translationX="@dimen/dimen_15dp"
         android:translationY="@dimen/dimen_6dp"
         app:layout_constraintDimensionRatio="1"
-        app:layout_constraintEnd_toEndOf="@+id/BigDotIV"
-        app:layout_constraintTop_toBottomOf="@+id/BigDotIV" />
+        app:layout_constraintEnd_toEndOf="@+id/bigDotImageView"
+        app:layout_constraintTop_toBottomOf="@+id/bigDotImageView" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/BigDotIV"
+        android:id="@+id/bigDotImageView"
         android:layout_width="@dimen/dimen_15dp"
         android:layout_height="@dimen/dimen_0dp"
         android:layout_marginTop="@dimen/dimen_30dp"
@@ -30,13 +30,13 @@
         android:translationX="@dimen/dimen_5dp"
         android:translationY="@dimen/dimen_5dp"
         app:layout_constraintDimensionRatio="1"
-        app:layout_constraintEnd_toEndOf="@+id/smsTV"
-        app:layout_constraintTop_toTopOf="@+id/smsTV" />
+        app:layout_constraintEnd_toEndOf="@+id/messageTextView"
+        app:layout_constraintTop_toTopOf="@+id/messageTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/smsTV"
+        android:id="@+id/messageTextView"
         style="@style/mediumMyriadGeo_Normal"
-        android:background="@drawable/bkg_sms"
+        android:background="@drawable/bkg_chat_message"
         android:padding="@dimen/dimen_16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,15 +49,17 @@
         tools:text = "@tools:sample/lorem" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dateTV"
-        style="@style/smallMyriadGeo_Normal"
+        android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="1"
+        android:textSize="@dimen/dimen_11sp"
+        android:textColor="@color/gray_100"
+        android:layout_margin="@dimen/dimen_5dp"
         android:translationX="@dimen/dimen_30dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallDotIV"
-        app:layout_constraintStart_toStartOf="@+id/smsTV"
-        app:layout_constraintTop_toBottomOf="@+id/smsTV"
+        app:layout_constraintEnd_toStartOf="@+id/smallDotImageView"
+        app:layout_constraintStart_toStartOf="@+id/messageTextView"
+        app:layout_constraintTop_toBottomOf="@+id/messageTextView"
         tools:text="14.04" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

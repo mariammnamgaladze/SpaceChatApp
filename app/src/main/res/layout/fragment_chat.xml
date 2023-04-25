@@ -19,12 +19,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/SmsET"
+            android:id="@+id/messageEditText"
             style="@style/Base.Widget.MaterialComponents.TextInputEditText.MessageTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/input_hint"
-            android:labelFor="@+id/SmsET"
+            android:labelFor="@+id/messageEditText"
             android:paddingEnd="50dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,5 +48,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/sms_layout_item" />
+        tools:listitem="@layout/chat_message_layout_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

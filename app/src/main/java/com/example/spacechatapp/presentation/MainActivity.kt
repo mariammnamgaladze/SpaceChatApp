@@ -2,7 +2,6 @@ package com.example.spacechatapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.spacechatapp.R
 import com.example.spacechatapp.databinding.ActivityMainBinding
@@ -22,11 +21,11 @@ class MainActivity : AppCompatActivity() {
     private fun setUpFragments(savedInstanceState: Bundle?) {
         supportFragmentManager.beginTransaction().apply {
             if (savedInstanceState == null) {
-                add(binding.topFragment.id, ChatFragment(), ChatUser.TOP_USER.name)
-                add(binding.bottomFragment.id, ChatFragment(), ChatUser.BOTTOM_USER.name)
+                add(binding.topFragment.id, ChatFragment(), ChatUser.TOP.name)
+                add(binding.bottomFragment.id, ChatFragment(), ChatUser.BOTTOM.name)
             } else {
-                replace(binding.topFragment.id, ChatFragment(), ChatUser.TOP_USER.name)
-                replace(binding.bottomFragment.id, ChatFragment(), ChatUser.BOTTOM_USER.name)
+                replace(binding.topFragment.id, ChatFragment(), ChatUser.TOP.name)
+                replace(binding.bottomFragment.id, ChatFragment(), ChatUser.BOTTOM.name)
             }
                 .commit()
         }
@@ -39,11 +38,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setDayNightMode(isNightModeOn: Boolean) {
-        if (isNightModeOn) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            binding.modesSwitch.setBackgroundResource(R.drawable.ic_nigth_to_day_mode)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
+        AppCompatDelegate.setDefaultNightMode(
+            (if (isNightModeOn) {
+                binding.modesSwitch.setBackgroundResource(R.drawable.ic_nigth_to_day_mode)
+                AppCompatDelegate.MODE_NIGHT_YES
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO
+            })
+        )
     }
 }

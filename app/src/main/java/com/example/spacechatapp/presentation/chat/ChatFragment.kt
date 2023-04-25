@@ -7,6 +7,7 @@ import com.example.spacechatapp.presentation.adapter.MessageAdapter
 import com.example.spacechatapp.presentation.base.BaseFragment
 import com.example.spacechatapp.presentation.base.Inflate
 import com.example.spacechatapp.presentation.model.ChatUser
+import com.example.spacechatapp.presentation.model.MessageModel
 
 class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>() {
 
@@ -20,12 +21,10 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>() {
     }
 
     override fun onBind(viewModel: ChatViewModel) {
-        initRecycler(viewModel)
+        initRecycler()
     }
 
-    private fun initRecycler(viewModel: ChatViewModel) {
+    private fun initRecycler() {
         binding.recyclerView.adapter = adapter
     }
-
-
 }

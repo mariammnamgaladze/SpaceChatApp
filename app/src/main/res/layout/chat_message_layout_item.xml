@@ -56,9 +56,7 @@
         android:textSize="@dimen/dimen_11sp"
         android:textColor="@color/gray_100"
         android:layout_margin="@dimen/dimen_5dp"
-        android:translationX="@dimen/dimen_30dp"
         app:layout_constraintEnd_toStartOf="@+id/smallDotImageView"
-        app:layout_constraintStart_toStartOf="@+id/messageTextView"
         app:layout_constraintTop_toBottomOf="@+id/messageTextView"
         tools:text="14.04" />
 

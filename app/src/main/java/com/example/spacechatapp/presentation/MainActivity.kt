@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpFragments(savedInstanceState)
-        listener()
+        setListener()
     }
 
     private fun setUpFragments(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun listener() {
+    private fun setListener() {
         binding.modesSwitch.setOnCheckedChangeListener { _, isChecked ->
             setDayNightMode(isChecked)
         }

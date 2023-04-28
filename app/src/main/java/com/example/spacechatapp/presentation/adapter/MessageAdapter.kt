@@ -43,7 +43,7 @@ class MessageAdapter(private val user: ChatUser) :
                     dateTextView.scaleX = this
                 }
                 val colorResId =
-                    if (user.name == message.user.name) COLOR_SEND else COLOR_RECEIVE
+                    if (user.name == message.user.name) R.color.purple_100 else R.color.gray_100
                 with(colorResId) {
                     smallDotImageView.setTint(this)
                     bigDotImageView.setTint(this)
@@ -53,11 +53,8 @@ class MessageAdapter(private val user: ChatUser) :
         }
 
         companion object {
-            const val COLOR_SEND = R.color.purple_100
-            const val COLOR_RECEIVE = R.color.gray_100
-            const val SCALE_POSITIVE = 1f
-            const val SCALE_NEGATIVE= -1f
-
+            private const val SCALE_POSITIVE = 1f
+            private const val SCALE_NEGATIVE = -1f
         }
     }
 }

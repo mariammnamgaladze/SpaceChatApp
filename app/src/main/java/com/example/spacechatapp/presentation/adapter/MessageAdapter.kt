@@ -1,8 +1,8 @@
 package com.example.spacechatapp.presentation.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spacechatapp.R
@@ -35,13 +35,10 @@ class MessageAdapter(private val user: ChatUser) :
             with(binding) {
                 messageTextView.text = message.message
                 dateTextView.text = message.sentDate.toString()
-
-                val scale = if (user.name == message.user.name) SCALE_POSITIVE else SCALE_NEGATIVE
-                with(scale) {
-                    root.scaleX = this
-                    messageTextView.scaleX = this
-                    dateTextView.scaleX = this
-                }
+                root.layoutDirection =
+                    if (user.name == message.user.name) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
+                messageTextView.layoutDirection
+                dateTextView.layoutDirection
                 val colorResId =
                     if (user.name == message.user.name) R.color.purple_100 else R.color.gray_100
                 with(colorResId) {
@@ -50,11 +47,6 @@ class MessageAdapter(private val user: ChatUser) :
                     messageTextView.setBackgroundTint(this)
                 }
             }
-        }
-
-        companion object {
-            private const val SCALE_POSITIVE = 1f
-            private const val SCALE_NEGATIVE = -1f
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.spacechatapp.presentation.chat
+package com.example.spacechatapp.presentation.chat.viewmodels
 
 import androidx.lifecycle.ViewModel
 

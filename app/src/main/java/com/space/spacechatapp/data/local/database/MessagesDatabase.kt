@@ -10,11 +10,10 @@ import com.space.spacechatapp.data.local.entity.MessagesEntity
     entities = [MessagesEntity::class],
     version = DB_VERSION, exportSchema = true
 )
-abstract class MessagesDatabase:RoomDatabase() {
+abstract class MessagesDatabase : RoomDatabase() {
+    abstract fun messagesDao(): MessagesDao
 
-abstract fun messagesDao(): MessagesDao
-
-    companion object{
+    companion object {
         const val DB_VERSION = 3
     }
 }

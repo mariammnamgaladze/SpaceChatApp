@@ -26,7 +26,6 @@ class MessageAdapter(private val user: ChatUser) :
 
     class MessageViewHolder(val binding: ChatMessageLayoutItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(user: ChatUser, message: MessageModel) {
             with(binding) {
                 messageTextView.text = message.message

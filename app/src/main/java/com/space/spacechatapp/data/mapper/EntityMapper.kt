@@ -9,6 +9,7 @@ fun MessageModel.toMessagesEntity() = MessagesEntity(
     sentDate = sentDate,
     user = user
 )
+
 fun MessagesEntity.toMessageModel() = MessageModel(
     id = id,
     message = message,

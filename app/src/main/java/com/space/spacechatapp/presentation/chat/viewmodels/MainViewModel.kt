@@ -41,6 +41,5 @@ class MainViewModel : ViewModel() {
                 } ?: AppCompatDelegate.MODE_NIGHT_NO
             }
         )
-
     }
 }

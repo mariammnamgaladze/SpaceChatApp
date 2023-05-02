@@ -37,7 +37,6 @@ fun <T : ViewBinding> Fragment.viewBinding(factory: (View) -> T): ReadOnlyProper
         }
     }
 
-
 /** Not really a delegate, just a small helper for RecyclerView.ViewHolders */
 inline fun <T : ViewBinding> ViewGroup.viewBinding(factory: (LayoutInflater, ViewGroup, Boolean) -> T) =
     factory(LayoutInflater.from(context), this, false)

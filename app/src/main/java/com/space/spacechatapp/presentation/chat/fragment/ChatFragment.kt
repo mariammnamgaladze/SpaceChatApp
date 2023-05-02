@@ -1,4 +1,5 @@
 package com.space.spacechatapp.presentation.chat.fragment
+
 import com.space.spacechatapp.R
 import com.space.spacechatapp.common.extension.getCurrentTime
 import com.space.spacechatapp.common.extension.lifecycleScope
@@ -16,8 +17,6 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     private val binding by viewBinding(FragmentChatBinding::bind)
     override val viewModelClass: KClass<ChatViewModel>
         get() = ChatViewModel::class
-
-
     private val adapter by lazy {
         MessageAdapter(ChatUser.valueOf(tag!!))
     }
@@ -26,7 +25,6 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
         initRecycler()
         getMessages(viewModel)
         listener(viewModel)
-
     }
 
     private fun initRecycler() {
@@ -36,7 +34,6 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     private fun listener(viewModel: ChatViewModel) {
         binding.sentButton.setOnClickListener {
             sendMessage(viewModel)
-
         }
     }
 
@@ -46,19 +43,16 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
         sentDate = getCurrentTime()
     )
 
-
     private fun getMessages(viewModel: ChatViewModel) {
-       lifecycleScope {
-           viewModel.getMessages().collect {
-               adapter.submitList(it)
-           }
-       }
-
+        lifecycleScope {
+            viewModel.getMessages().collect {
+                adapter.submitList(it)
+            }
+        }
     }
 
     private fun sendMessage(viewModel: ChatViewModel) {
         viewModel.sendMessages(provideMessageModel(binding.messageEditText.text.toString()))
         binding.messageEditText.text?.clear()
-
     }
 }

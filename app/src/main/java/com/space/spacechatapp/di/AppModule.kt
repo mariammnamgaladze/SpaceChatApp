@@ -20,19 +20,14 @@ private fun provideMessagesDatabase(context: Context): MessagesDatabase {
 }
 
 private fun provideDao(database: MessagesDatabase) = database.messagesDao()
-
 val databaseModule = module {
     single { provideMessagesDatabase(get()) }
     single { provideDao(get()) }
 }
-
 val repositoryModule = module {
     single<MessagesRepository> { MessagesRepositoryImpl(get()) }
 }
-
-
 val viewModelModule = module {
-
     viewModel {
         ChatViewModel(get())
     }

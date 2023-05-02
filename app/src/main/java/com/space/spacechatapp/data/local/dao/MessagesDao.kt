@@ -8,11 +8,9 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MessagesDao {
-
     @Query("SELECT * FROM messages")
     fun getAll(): Flow<List<MessagesEntity>>
 
     @Insert
     suspend fun insertMessages(vararg messagesEntity: MessagesEntity)
-
 }

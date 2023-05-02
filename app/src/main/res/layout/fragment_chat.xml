@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.chat.fragment.ChatFragment">
+    tools:context=".presentation.chat.ChatFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFiled"
+        android:id="@+id/textField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.MessageTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,21 +30,23 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/sendButton"
+        android:id="@+id/sentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_16dp"
         android:background="@drawable/ic_send_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/textFiled"
-        app:layout_constraintEnd_toEndOf="@+id/textFiled"
-        app:layout_constraintTop_toTopOf="@+id/textFiled" />
+        app:layout_constraintBottom_toBottomOf="@+id/textField"
+        app:layout_constraintEnd_toEndOf="@+id/textField"
+        app:layout_constraintTop_toTopOf="@+id/textField" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:reverseLayout="false"
+        app:stackFromEnd="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/textFiled"
+        app:layout_constraintBottom_toTopOf="@+id/textField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.spacechatapp'
+    namespace 'com.space.spacechatapp'
     compileSdk 33
 
     defaultConfig {

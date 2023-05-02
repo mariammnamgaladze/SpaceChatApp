@@ -18,5 +18,5 @@ data class MessagesEntity(
     val sentDate: Long,
 
     @ColumnInfo(name = "chat_user")
-    val user: ChatUser,
+    val user: String,
 )

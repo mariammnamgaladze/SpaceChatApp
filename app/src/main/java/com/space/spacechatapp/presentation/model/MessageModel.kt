@@ -4,5 +4,5 @@ data class MessageModel(
     val id: Int? = null,
     val message: String,
     val sentDate: Long,
-    val user: ChatUser
+    val user: String,
 )

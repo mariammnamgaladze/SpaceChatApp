@@ -11,6 +11,11 @@ import kotlin.reflect.KClass
 abstract class BaseFragment<VM : ViewModel>(@LayoutRes layout: Int) : Fragment(layout) {
     abstract val viewModelClass: KClass<VM>
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
+    protected val listener = object : AdapterListener {
+        override fun getUserId(): String = userId
+    }
+    protected val userId get() = userId()
+    abstract fun userId(): String
     abstract fun onBind(viewModel: VM)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

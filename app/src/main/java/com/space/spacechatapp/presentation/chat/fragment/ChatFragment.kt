@@ -18,7 +18,10 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     override val viewModelClass: KClass<ChatViewModel>
         get() = ChatViewModel::class
     private val adapter by lazy {
-        MessageAdapter(ChatUser.valueOf(tag!!))
+        MessageAdapter(listener)
+    }
+    override fun userId(): String {
+        return tag.toString()
     }
 
     override fun onBind(viewModel: ChatViewModel) {
@@ -37,11 +40,6 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
         }
     }
 
-    private fun provideMessageModel(text: String) = MessageModel(
-        user = ChatUser.valueOf(tag.toString()),
-        message = text,
-        sentDate = getCurrentTime()
-    )
 
     private fun getMessages(viewModel: ChatViewModel) {
         lifecycleScope {
@@ -52,7 +50,7 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     }
 
     private fun sendMessage(viewModel: ChatViewModel) {
-        viewModel.sendMessages(provideMessageModel(binding.messageEditText.text.toString()))
+        viewModel.sendMessages(binding.messageEditText.text.toString(),tag.toString())
         binding.messageEditText.text?.clear()
     }
 }

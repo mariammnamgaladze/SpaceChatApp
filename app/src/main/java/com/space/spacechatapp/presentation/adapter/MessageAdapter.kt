@@ -10,10 +10,11 @@ import com.space.spacechatapp.common.extension.setBackgroundTint
 import com.space.spacechatapp.common.extension.setTint
 import com.space.spacechatapp.common.extension.viewBinding
 import com.space.spacechatapp.databinding.ChatMessageLayoutItemBinding
+import com.space.spacechatapp.presentation.base.AdapterListener
 import com.space.spacechatapp.presentation.model.MessageModel
 import com.space.spacechatapp.presentation.model.ChatUser
 
-class MessageAdapter(private val user: ChatUser) :
+class MessageAdapter(private val listener: AdapterListener) :
     ListAdapter<MessageModel, MessageAdapter.MessageViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
@@ -21,21 +22,21 @@ class MessageAdapter(private val user: ChatUser) :
     }
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        holder.bind(user, getItem(position))
+        holder.bind(listener, getItem(position))
     }
 
     class MessageViewHolder(val binding: ChatMessageLayoutItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(user: ChatUser, message: MessageModel) {
+        fun bind(listener: AdapterListener, message: MessageModel) {
             with(binding) {
                 messageTextView.text = message.message
                 dateTextView.text = message.sentDate.formatTime()
                 root.layoutDirection =
-                    if (user.name == message.user.name) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
+                    if (listener.getUserId() == message.user) View.LAYOUT_DIRECTION_LTR else View.LAYOUT_DIRECTION_RTL
                 messageTextView.layoutDirection
                 dateTextView.layoutDirection
                 val colorResId =
-                    if (user.name == message.user.name) R.color.purple_100 else R.color.gray_100
+                    if (listener.getUserId() == message.user) R.color.purple_100 else R.color.gray_100
                 with(colorResId) {
                     smallDotImageView.setTint(this)
                     bigDotImageView.setTint(this)

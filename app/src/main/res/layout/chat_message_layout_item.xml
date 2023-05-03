@@ -4,60 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dimen_5dp"
-    android:layout_marginHorizontal="@dimen/dimen_16dp"
-    android:scaleX="1">
+    android:layout_margin="@dimen/dimen_14dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mediumMyriadGeo_Normal"
+        android:layout_marginEnd="@dimen/dimen_3dp"
+        android:layout_marginBottom="@dimen/dimen_3dp"
+        android:background="@drawable/bkg_chat_message"
+        android:backgroundTint="@color/purple_100"
+        android:maxWidth="300dp"
+        android:padding="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toBottomOf="@id/bigDotImageView"
+        app:layout_constraintEnd_toEndOf="@id/bigDotImageView"
+        tools:text="@tools:sample/lorem" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/smallDotImageView"
         android:layout_width="@dimen/dimen_10dp"
-        android:layout_height="@dimen/dimen_0dp"
+        android:layout_height="@dimen/dimen_10dp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
         android:src="@drawable/dot"
         android:tint="@color/purple_100"
-        android:translationX="@dimen/dimen_15dp"
-        android:translationY="@dimen/dimen_6dp"
-        app:layout_constraintDimensionRatio="1"
-        app:layout_constraintEnd_toEndOf="@+id/bigDotImageView"
-        app:layout_constraintTop_toBottomOf="@+id/bigDotImageView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/bigDotImageView"
-        android:layout_width="@dimen/dimen_15dp"
-        android:layout_height="@dimen/dimen_0dp"
-        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@android:color/transparent"
         android:src="@drawable/dot"
         android:tint="@color/purple_100"
-        android:translationX="@dimen/dimen_5dp"
-        android:translationY="@dimen/dimen_5dp"
-        app:layout_constraintDimensionRatio="1"
-        app:layout_constraintEnd_toEndOf="@+id/messageTextView"
-        app:layout_constraintTop_toTopOf="@+id/messageTextView" />
+        app:layout_constraintBottom_toTopOf="@id/smallDotImageView"
+        app:layout_constraintEnd_toStartOf="@id/smallDotImageView" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/messageTextView"
-        style="@style/mediumMyriadGeo_Normal"
-        android:background="@drawable/bkg_chat_message"
-        android:padding="@dimen/dimen_16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_20dp"
-        android:backgroundTint="@color/purple_100"
-        android:scaleX="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text = "@tools:sample/lorem" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateTextView"
-        style="@style/smallMyriadGeo_Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="1"
+        style="@style/smallMyriadGeo_Normal"
         android:textColor="@color/gray_100"
-        android:layout_margin="@dimen/dimen_5dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallDotImageView"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView"
-        tools:text="14.04" />
-
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        app:layout_constraintEnd_toEndOf="@id/messageTextView"
+        app:layout_constraintTop_toBottomOf="@id/messageTextView"
+        tools:text="23:00 სამშ" />
 </androidx.constraintlayout.widget.ConstraintLayout>

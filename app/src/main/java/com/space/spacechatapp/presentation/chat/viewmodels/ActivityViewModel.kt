@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
+class ActivityViewModel : ViewModel() {
 
     private val _themeLiveData = MutableLiveData<Int>()
     val themeLiveData: LiveData<Int>

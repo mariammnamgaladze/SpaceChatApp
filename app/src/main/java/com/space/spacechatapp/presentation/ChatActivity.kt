@@ -8,20 +8,20 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.lifecycle.Observer
 import com.space.spacechatapp.R
 import com.space.spacechatapp.common.extension.viewBinding
-import com.space.spacechatapp.databinding.ActivityMainBinding
+import com.space.spacechatapp.databinding.ActivityChatBinding
 import com.space.spacechatapp.presentation.chat.fragment.ChatFragment
-import com.space.spacechatapp.presentation.chat.viewmodels.MainViewModel
+import com.space.spacechatapp.presentation.chat.viewmodels.ActivityViewModel
 import com.space.spacechatapp.presentation.model.ChatUser
 
-class MainActivity : AppCompatActivity() {
-    private val binding by viewBinding(ActivityMainBinding::inflate)
-    private val viewModel: MainViewModel by viewModels()
+class ChatActivity : AppCompatActivity() {
+    private val binding by viewBinding(ActivityChatBinding::inflate)
+    private val viewModel: ActivityViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setUpFragments(savedInstanceState)
         setListener()
-        observers()
+        setObservers()
     }
 
     private fun setUpFragments(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun observers() {
+    private fun setObservers() {
         viewModel.themeLiveData.observe(this, Observer { theme ->
             AppCompatDelegate.setDefaultNightMode(theme)
         })

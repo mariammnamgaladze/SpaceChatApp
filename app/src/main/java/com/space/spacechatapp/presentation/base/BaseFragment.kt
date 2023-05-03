@@ -12,7 +12,8 @@ abstract class BaseFragment<VM : ViewModel>(@LayoutRes layout: Int) : Fragment(l
     abstract val viewModelClass: KClass<VM>
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
     protected val listener = object : AdapterListener {
-        override fun getUserId(): String = userId
+        override val getUserId: () -> String
+            get() = { userId }
     }
     protected val userId get() = userId()
     abstract fun userId(): String

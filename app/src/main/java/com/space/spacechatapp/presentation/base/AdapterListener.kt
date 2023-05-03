@@ -1,5 +1,5 @@
 package com.space.spacechatapp.presentation.base
 
 interface AdapterListener {
-    fun getUserId(): String
+    val getUserId:() -> String
 }

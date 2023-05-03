@@ -14,6 +14,6 @@ abstract class MessagesDatabase : RoomDatabase() {
     abstract fun messagesDao(): MessagesDao
 
     companion object {
-        const val DB_VERSION = 3
+        const val DB_VERSION = 4
     }
 }

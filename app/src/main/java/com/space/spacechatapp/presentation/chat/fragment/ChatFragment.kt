@@ -15,10 +15,7 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     override val viewModelClass: KClass<ChatViewModel>
         get() = ChatViewModel::class
     private val adapter by lazy {
-        MessageAdapter(listener)
-    }
-    override fun userId(): String {
-        return tag.toString()
+        MessageAdapter(adapterListener)
     }
 
     override fun onBind(viewModel: ChatViewModel) {
@@ -47,7 +44,7 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
     }
 
     private fun sendMessage(viewModel: ChatViewModel) {
-        viewModel.sendMessages(binding.messageEditText.text.toString(),tag.toString())
+        viewModel.sendMessages(binding.messageEditText.text.toString(), tag.toString())
         binding.messageEditText.text?.clear()
     }
 }

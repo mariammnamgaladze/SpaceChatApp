@@ -1,4 +1,4 @@
-package com.space.spacechatapp.domain.di
+package com.space.spacechatapp.di
 
 import android.content.Context
 import androidx.room.Room

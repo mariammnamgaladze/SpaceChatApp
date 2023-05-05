@@ -14,7 +14,7 @@
         android:theme="@style/Theme.SpaceChatApp"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ChatActivity"
+            android:name=".presentation.chat.activity.ChatActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

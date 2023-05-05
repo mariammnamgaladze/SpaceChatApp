@@ -1,11 +1,11 @@
-package com.space.spacechatapp.di
+package com.space.spacechatapp.domain.di
 
 import android.content.Context
 import androidx.room.Room
 import com.space.spacechatapp.data.local.database.MessagesDatabase
 import com.space.spacechatapp.data.repository.MessagesRepositoryImpl
 import com.space.spacechatapp.domain.repository.MessagesRepository
-import com.space.spacechatapp.presentation.chat.viewmodels.ChatViewModel
+import com.space.spacechatapp.presentation.chat.fragment.viewmodel.ChatViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

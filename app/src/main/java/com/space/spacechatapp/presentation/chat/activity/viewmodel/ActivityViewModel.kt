@@ -1,4 +1,4 @@
-package com.space.spacechatapp.presentation.chat.viewmodels
+package com.space.spacechatapp.presentation.chat.activity.viewmodel
 
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.LiveData

@@ -1,4 +1,4 @@
-package com.space.spacechatapp.presentation.chat.viewmodels
+package com.space.spacechatapp.presentation.chat.fragment.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.space.spacechatapp.common.extension.getCurrentTime

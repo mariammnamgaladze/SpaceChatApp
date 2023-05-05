@@ -1,15 +1,12 @@
 package com.space.spacechatapp.presentation.chat.fragment
 
 import com.space.spacechatapp.R
-import com.space.spacechatapp.common.extension.getCurrentTime
 import com.space.spacechatapp.common.extension.lifecycleScope
 import com.space.spacechatapp.common.extension.viewBinding
 import com.space.spacechatapp.databinding.FragmentChatBinding
 import com.space.spacechatapp.presentation.adapter.MessageAdapter
 import com.space.spacechatapp.presentation.base.BaseFragment
-import com.space.spacechatapp.presentation.chat.viewmodels.ChatViewModel
-import com.space.spacechatapp.presentation.model.ChatUser
-import com.space.spacechatapp.presentation.model.MessageModel
+import com.space.spacechatapp.presentation.chat.fragment.viewmodel.ChatViewModel
 import kotlin.reflect.KClass
 
 

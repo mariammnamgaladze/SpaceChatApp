@@ -1,15 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
-    namespace 'com.example.spacechatapp'
+    namespace 'com.space.spacechatapp'
     compileSdk 33
 
     defaultConfig {
         applicationId "com.example.spacechatapp"
-        minSdk 21
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -50,5 +52,15 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
     implementation "androidx.fragment:fragment-ktx:1.5.6"
+
+    //Room
+    implementation "androidx.room:room-runtime:2.4.3"
+    annotationProcessor "androidx.room:room-compiler:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+    implementation "androidx.room:room-ktx:2.4.3"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+
+    //koin
+    implementation "io.insert-koin:koin-android:3.4.0"
 
 }

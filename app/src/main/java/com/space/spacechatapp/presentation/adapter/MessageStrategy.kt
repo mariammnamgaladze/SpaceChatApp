@@ -19,6 +19,7 @@ class SenderStrategy : MessageStrategy {
                 bigDotImageView.setTint(this)
                 messageTextView.setBackgroundTint(this)
                 smallDotImageView.setTint(this)
+                messageTextView.setTextBackgroundTint(R.color.black)
             }
             root.layoutDirection = View.LAYOUT_DIRECTION_LTR
         }
@@ -50,6 +51,7 @@ class ReceiverStrategy : MessageStrategy {
                 bigDotImageView.setTint(this)
                 messageTextView.setBackgroundTint(this)
                 smallDotImageView.setTint(this)
+                messageTextView.setTextBackgroundTint(R.color.black)
             }
             root.layoutDirection = View.LAYOUT_DIRECTION_RTL
         }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.space.spacechatapp.R
 
 class ActivityViewModel : ViewModel() {
 
@@ -15,26 +16,16 @@ class ActivityViewModel : ViewModel() {
     val backgroundLiveData: LiveData<Int>
         get() = _backgroundLiveData
 
-    fun setTheme(isChecked: Boolean, theme: Int) {
-        if (isChecked) {
-            _themeLiveData.postValue(theme)
-        }
-    }
-
-    fun setBackground(isChecked: Boolean, background: Int) {
-        if (isChecked) {
-            _backgroundLiveData.postValue(background)
-        }
-    }
-
     fun setDayNightMode(isNightModeOn: Boolean) {
         AppCompatDelegate.setDefaultNightMode(
             if (isNightModeOn) {
+                _backgroundLiveData.postValue(R.drawable.ic_nigth_to_day_mode)
                 _themeLiveData.value?.let {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     return@let it
                 } ?: AppCompatDelegate.MODE_NIGHT_YES
             } else {
+                _backgroundLiveData.postValue(R.drawable.ic_day_to_night_mode)
                 _themeLiveData.value?.let {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     return@let it

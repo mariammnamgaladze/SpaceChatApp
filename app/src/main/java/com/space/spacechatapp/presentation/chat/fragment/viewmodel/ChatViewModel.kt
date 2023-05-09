@@ -8,16 +8,17 @@ import com.space.spacechatapp.presentation.model.MessageModel
 import kotlinx.coroutines.flow.Flow
 
 class ChatViewModel(private val repository: MessagesRepository) : ViewModel() {
-    private fun provideMessageModel(text: String, tag: String) = MessageModel(
+    private fun provideMessageModel(text: String, tag: String, isOnline: Boolean) = MessageModel(
         user = tag,
         message = text,
-        sentDate = getCurrentTime()
+        sentDate = getCurrentTime(),
+        isOnline = isOnline
     )
 
     suspend fun getMessages(): Flow<List<MessageModel>> = repository.getAllMessages()
-    fun sendMessages(input: String, tag: String) {
+    fun sendMessages(input: String, tag: String, isOnline: Boolean) {
         viewModelScope {
-            repository.insertMessage(provideMessageModel(input, tag))
+            repository.insertMessage(provideMessageModel(input, tag, isOnline))
         }
     }
 }

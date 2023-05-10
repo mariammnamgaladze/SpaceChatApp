@@ -18,6 +18,6 @@ fun Context.isNetworkAvailable(): Boolean {
             ) || hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
         } ?: false
     } else {
-        return false
+         false
     }
 }

@@ -21,4 +21,10 @@ class ChatViewModel(private val repository: MessagesRepository) : ViewModel() {
             repository.insertMessage(provideMessageModel(input, tag, isOnline))
         }
     }
+
+    fun filterMessages(messages: List<MessageModel>,adapterListener:()-> String): List<MessageModel> {
+        return messages.filter {
+            it.user == adapterListener.invoke() || it.isOnline
+        }
+    }
 }

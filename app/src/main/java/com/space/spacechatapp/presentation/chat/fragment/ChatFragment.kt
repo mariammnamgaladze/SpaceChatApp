@@ -37,16 +37,10 @@ class ChatFragment : BaseFragment<ChatViewModel>(R.layout.fragment_chat) {
         }
     }
 
-    private fun filterMessages(messages: List<MessageModel>): List<MessageModel> {
-        return messages.filter {
-            it.user == adapterListener.invoke() || it.isOnline
-        }
-    }
-
     private fun getMessages(viewModel: ChatViewModel) {
         lifecycleScope {
             viewModel.getMessages().collect {
-                adapter.submitList(filterMessages(it))
+                adapter.submitList(viewModel.filterMessages(it, adapterListener))
             }
         }
     }

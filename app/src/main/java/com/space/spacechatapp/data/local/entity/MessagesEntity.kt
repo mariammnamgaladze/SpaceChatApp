@@ -10,4 +10,5 @@ data class MessagesEntity(
     val message: String,
     val sentDate: Long,
     val user: String,
+    val isOnline:Boolean = true
 )

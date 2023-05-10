@@ -11,7 +11,6 @@
         <item name="android:textSize">@dimen/dimen_11sp</item>
         <item name="android:color">@color/gray_100</item>
         <item name="android:font">@font/myriad_geo</item>
-
     </style>
 
     <style name="Base.Widget.MaterialComponents.TextInputEditText.MessageTextInputEditText" parent="Base.Widget.MaterialComponents.TextInputEditText">

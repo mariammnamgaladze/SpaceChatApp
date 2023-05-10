@@ -17,4 +17,5 @@
     <color name="main_purple">#9F60FF</color>
     <color name="yellow">#F7CE7F</color>
     <color name="dark_background">#160039</color>
+    <color name="fade">#80191919</color>
 </resources>

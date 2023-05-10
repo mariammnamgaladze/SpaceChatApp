@@ -5,9 +5,11 @@ import java.util.*
 
 
 fun Long.formatTime(): String {
+    val georgianLocale = Locale("ka", "GE")
     val calendar = Calendar.getInstance()
-    val dayMonthFormat = SimpleDateFormat("dd/MM, HH:mm", Locale.getDefault())
-    return dayMonthFormat.format(calendar.time)
+    val dateFormat = SimpleDateFormat("MMM d HH:mm", georgianLocale)
+    calendar.timeInMillis = this
+    return dateFormat.format(calendar.time)
 }
 
 fun getCurrentTime(): Long {

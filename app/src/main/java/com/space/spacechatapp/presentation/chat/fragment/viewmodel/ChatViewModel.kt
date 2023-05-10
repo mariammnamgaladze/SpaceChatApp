@@ -8,23 +8,23 @@ import com.space.spacechatapp.presentation.model.MessageModel
 import kotlinx.coroutines.flow.Flow
 
 class ChatViewModel(private val repository: MessagesRepository) : ViewModel() {
-    private fun provideMessageModel(text: String, tag: String, isOnline: Boolean) = MessageModel(
-        user = tag,
+    private fun provideMessageModel(text: String, userID: String, isOnline: Boolean) = MessageModel(
+        user = userID,
         message = text,
         sentDate = getCurrentTime(),
         isOnline = isOnline
     )
 
     suspend fun getMessages(): Flow<List<MessageModel>> = repository.getAllMessages()
-    fun sendMessages(input: String, tag: String, isOnline: Boolean) {
+    fun sendMessages(input: String, userID:String, isOnline: Boolean) {
         viewModelScope {
-            repository.insertMessage(provideMessageModel(input, tag, isOnline))
+            repository.insertMessage(provideMessageModel(input, userID, isOnline))
         }
     }
 
-    fun filterMessages(messages: List<MessageModel>,adapterListener:()-> String): List<MessageModel> {
+    fun filterMessages(messages: List<MessageModel>, userID: String): List<MessageModel> {
         return messages.filter {
-            it.user == adapterListener.invoke() || it.isOnline
+            it.user == userID || it.isOnline
         }
     }
 }

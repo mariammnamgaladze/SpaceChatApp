@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.Observer
 import com.space.spacechatapp.common.extension.viewBinding
 import com.space.spacechatapp.databinding.ActivityChatBinding
-import com.space.spacechatapp.presentation.chat.fragment.ChatFragment
 import com.space.spacechatapp.presentation.chat.activity.viewmodel.ActivityViewModel
-import com.space.spacechatapp.presentation.model.ChatUser
+import com.space.spacechatapp.presentation.chat.fragment.ChatFragmentFirst
+import com.space.spacechatapp.presentation.chat.fragment.ChatFragmentSecond
 
 class ChatActivity : AppCompatActivity() {
     private val binding by viewBinding(ActivityChatBinding::inflate)
@@ -17,22 +17,19 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setUpFragments(savedInstanceState)
+        if (savedInstanceState == null) {
+            setUpFragments()
+        }
         setListener()
         setObservers()
     }
 
-    private fun setUpFragments(savedInstanceState: Bundle?) {
+    private fun setUpFragments() {
         supportFragmentManager.beginTransaction().apply {
-            if (savedInstanceState == null) {
-                add(binding.topFragment.id, ChatFragment(), ChatUser.SENDER.name)
-                add(binding.bottomFragment.id, ChatFragment(), ChatUser.RECEIVER.name)
-            } else {
-                replace(binding.topFragment.id, ChatFragment(), ChatUser.SENDER.name)
-                replace(binding.bottomFragment.id, ChatFragment(), ChatUser.RECEIVER.name)
-            }
-                .commit()
+            replace(binding.topFragment.id, ChatFragmentFirst())
+            replace(binding.bottomFragment.id, ChatFragmentSecond())
         }
+            .commit()
     }
 
     private fun setObservers() {

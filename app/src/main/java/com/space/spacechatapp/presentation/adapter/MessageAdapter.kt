@@ -7,7 +7,7 @@ import com.space.spacechatapp.common.extension.viewBinding
 import com.space.spacechatapp.databinding.ChatMessageLayoutItemBinding
 import com.space.spacechatapp.presentation.model.MessageModel
 
-class MessageAdapter(private val adapterListener: () -> String) :
+class MessageAdapter(private val adapterListener: AdapterListener) :
     ListAdapter<MessageModel, MessageAdapter.MessageViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
@@ -20,10 +20,10 @@ class MessageAdapter(private val adapterListener: () -> String) :
 
     class MessageViewHolder(private val binding: ChatMessageLayoutItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(adapterListener: () -> String, item: MessageModel) {
+        fun bind(adapterListener: AdapterListener, item: MessageModel) {
             with(binding) {
                 messageTextView.text = item.message
-                val uiStrategy = if (adapterListener.invoke() == item.user) {
+                val uiStrategy = if (adapterListener.getUserId() == item.user) {
                     if (item.isOnline) SenderStrategy() else NoInternetStrategy()
                 } else {
                     ReceiverStrategy()

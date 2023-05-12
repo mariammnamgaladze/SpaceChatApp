@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dimen_14dp">
+    android:layout_marginHorizontal="@dimen/dimen_14dp"
+    android:layout_marginTop="@dimen/dimen_10dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/messageTextView"

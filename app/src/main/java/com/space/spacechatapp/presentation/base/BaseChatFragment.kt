@@ -10,7 +10,9 @@ import com.space.spacechatapp.presentation.adapter.MessageAdapter
 import com.space.spacechatapp.presentation.chat.fragment.viewmodel.ChatViewModel
 import kotlin.reflect.KClass
 
-
+/**
+ * The BaseChatFragment class is an open class that extends the BaseFragment class and is used as a base class for fragments that display chat messages.
+ */
 open class BaseChatFragment() : BaseFragment<ChatViewModel>() {
     private val binding by viewBinding(FragmentChatBinding::bind)
     override val viewModelClass: KClass<ChatViewModel>
@@ -54,10 +56,9 @@ open class BaseChatFragment() : BaseFragment<ChatViewModel>() {
 
     private fun sendMessage(viewModel: ChatViewModel) {
         viewModel.sendMessages(
-            binding.messageEditText.text.toString(),userID(),
+            binding.messageEditText.text.toString(), userID(),
             requireContext().isNetworkAvailable()
         )
         binding.messageEditText.text?.clear()
     }
-
 }

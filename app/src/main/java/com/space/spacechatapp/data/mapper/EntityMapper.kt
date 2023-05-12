@@ -9,7 +9,6 @@ fun MessageModel.toMessagesEntity() = MessagesEntity(
     sentDate = sentDate,
     user = user,
     isOnline = isOnline
-
 )
 
 fun MessagesEntity.toMessageModel() = MessageModel(
@@ -18,5 +17,4 @@ fun MessagesEntity.toMessageModel() = MessageModel(
     sentDate = sentDate,
     user = user,
     isOnline = isOnline
-
 )

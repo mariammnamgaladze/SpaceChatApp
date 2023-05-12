@@ -11,6 +11,9 @@ import com.space.spacechatapp.presentation.chat.activity.viewmodel.ActivityViewM
 import com.space.spacechatapp.presentation.chat.fragment.ChatFragmentFirst
 import com.space.spacechatapp.presentation.chat.fragment.ChatFragmentSecond
 
+/**
+ * The ChatActivity is an activity class that represents the main screen of the chat feature.
+ */
 class ChatActivity : AppCompatActivity() {
     private val binding by viewBinding(ActivityChatBinding::inflate)
     private val viewModel: ActivityViewModel by viewModels()

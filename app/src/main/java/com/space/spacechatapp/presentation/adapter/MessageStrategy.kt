@@ -6,10 +6,17 @@ import com.space.spacechatapp.common.extension.*
 import com.space.spacechatapp.databinding.ChatMessageLayoutItemBinding
 import com.space.spacechatapp.presentation.model.MessageModel
 
+/**
+MessageStrategy is an interface that provides a contract for setting the elements of a message in a chat message layout.
+ */
 interface MessageStrategy {
     fun setElements(binding: ChatMessageLayoutItemBinding, item: MessageModel)
 }
 
+/**
+SenderStrategy, NoInternetStrategy, and ReceiverStrategy are implementations of the MessageStrategy interface,
+each providing a specific implementation for setting the elements of a chat message layout based on the type of message.
+ */
 class SenderStrategy : MessageStrategy {
     override fun setElements(binding: ChatMessageLayoutItemBinding, item: MessageModel) {
         with(binding) {

@@ -9,6 +9,11 @@ import androidx.lifecycle.ViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModelForClass
 import kotlin.reflect.KClass
 
+/**
+ * This is an abstract class that serves as a base for creating fragments in an Android app.
+ * The class defines some common functionality for all fragments, such as inflating the fragment layout,
+ * initializing the ViewModel, and binding the ViewModel to the UI.
+ */
 abstract class BaseFragment<VM : ViewModel> : Fragment() {
     abstract val viewModelClass: KClass<VM>
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
@@ -21,6 +26,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
     ): View? {
         return inflater.inflate(layout, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onBind(viewModel)

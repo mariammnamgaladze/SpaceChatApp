@@ -6,6 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.space.spacechatapp.R
 
+/**
+ * The ActivityViewModel class is a subclass of the Android Architecture Components ViewModel class that provides data and functionality related to the activity's theme and background.
+ * It has two live data objects, themeLiveData and backgroundLiveData, that other components can observe to get updates about the current theme and background.
+ */
 class ActivityViewModel : ViewModel() {
 
     private val _themeLiveData = MutableLiveData<Int>()

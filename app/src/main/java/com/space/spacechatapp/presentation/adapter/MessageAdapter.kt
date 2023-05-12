@@ -7,6 +7,10 @@ import com.space.spacechatapp.common.extension.viewBinding
 import com.space.spacechatapp.databinding.ChatMessageLayoutItemBinding
 import com.space.spacechatapp.presentation.model.MessageModel
 
+/**
+ * The MessageAdapter class is a custom adapter used to display a list of messages in a RecyclerView.
+ * It extends the ListAdapter abstract class, which provides a base implementation for an adapter that can efficiently calculate differences between two lists of data.
+ */
 class MessageAdapter(private val adapterListener: AdapterListener) :
     ListAdapter<MessageModel, MessageAdapter.MessageViewHolder>(DiffCallback()) {
 

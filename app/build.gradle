@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.space.spacechatapp'
+    namespace 'com.space.chatapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.spacechatapp"
+        applicationId "com.space.chatapp"
         minSdk 24
         targetSdk 33
         versionCode 1

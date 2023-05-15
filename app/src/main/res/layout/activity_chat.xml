@@ -37,7 +37,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_6dp"
-        android:background="@color/yellow" />
+        android:background="@color/divider_primary" />
 
     <FrameLayout
         android:id="@+id/bottomFragment"

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.SpaceChatApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/main_purple</item>
+        <item name="colorPrimary">@color/purple_default</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
@@ -12,7 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/background</item>
         <!-- Customize your theme here. -->
-        <item name="android:background">@color/dark_background</item>
+        <item name="android:background">@color/dark_01_midnight_blue</item>
         <item name="android:textColor">@color/black</item>
     </style>
 </resources>

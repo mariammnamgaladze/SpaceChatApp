@@ -3,13 +3,13 @@
 
     <style name="mediumMyriadGeo_Normal">
         <item name="android:textSize">@dimen/dimen_14sp</item>
-        <item name="android:color">@color/gray_400</item>
+        <item name="android:color">@color/neutral_02_dark_grey</item>
         <item name="android:font">@font/myriad_geo</item>
     </style>
 
     <style name="smallMyriadGeo_Normal">
         <item name="android:textSize">@dimen/dimen_11sp</item>
-        <item name="android:color">@color/gray_100</item>
+        <item name="android:color">@color/neutral_05_lightest_grey</item>
         <item name="android:font">@font/myriad_geo</item>
     </style>
 
@@ -18,7 +18,7 @@
         <item name="android:scrollbarThumbVertical">@drawable/scrollbar_thumb</item>
         <item name="android:scrollbarTrackVertical">@drawable/scrollbar_track</item>
         <item name="android:scrollbars">vertical</item>
-        <item name="android:textColorHint">@color/gray_300</item>
+        <item name="android:textColorHint">@color/neutral_04_light_grey</item>
         <item name="android:textSize">@dimen/dimen_14sp</item>
         <item name="android:font">@font/myriad_geo</item>
 
@@ -32,7 +32,7 @@
         <item name="boxCornerRadiusTopStart">@dimen/dimen_28dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_28dp</item>
         <item name="boxStrokeWidth">@dimen/dimen_1dp</item>
-        <item name="boxStrokeColor">@color/main_purple</item>
+        <item name="boxStrokeColor">@color/purple_default</item>
         <item name="hintEnabled">false</item>
     </style>
 
